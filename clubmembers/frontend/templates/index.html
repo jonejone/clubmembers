@@ -1,0 +1,22 @@
+
+<h1>Clubs</h1>
+
+<ul>
+    {% for club in clubs %}
+    <li>
+        {{ club.name }}
+
+        {% if club.clubregion_set %}
+        <ul>
+            {% for club_region in club.clubregion_set.all %}
+            <li>
+                {{ club_region.name }}
+
+                ({{ club_region.member_set.count }})
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>

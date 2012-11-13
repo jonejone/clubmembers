@@ -1,0 +1,35 @@
+{% extends "club/base.html" %}
+{% load i18n %}
+
+{% block content %}
+<h1>{{ member.get_name }}</h1>
+
+<dl>
+    <dt>{% trans "Club region" %}</dt>
+    <dd>{{ member.club_region }}</dd>
+
+    <dt>{% trans "Joined" %}</dt>
+    <dd>{{ member.joined }}</dd>
+
+    <dt>{% trans "Active" %}</dt>
+    <dd>
+        {% if member.active %}
+            {% trans "Yes" %}
+        {% else %}
+            {% trans "No" %}
+        {% endif %}
+    </dd>
+
+    <dt>{% trans "PDGA Number" %}</dt>
+    <dd>
+        {% if member.pdga_number %}
+            <a href="{{ member.get_pdga_link }}">
+                {{ member.pdga_number }}
+            </a>
+        {% else %}
+            <span class="muted">N/A</span>
+        {% endif %}
+    </dd>
+</dl>
+
+{% endblock %}
