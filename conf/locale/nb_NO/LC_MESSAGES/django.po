@@ -1,0 +1,113 @@
+# Norwegian translation for ClubMembers app
+# Jone Eide <jone@idev.no> 2012
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Clubmembers\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-11-16 13:11-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Jone Eide <jone@idev.no>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: clubmembers/frontend/templates/club/base.html:6
+msgid "Club members"
+msgstr "Klubbmedlemmer"
+
+#: clubmembers/frontend/templates/club/base.html:28
+#: clubmembers/members/models.py:48
+msgid "Members"
+msgstr "Medlemmer"
+
+#: clubmembers/frontend/templates/club/base.html:29
+#: clubmembers/frontend/templates/club/register.html:5
+msgid "Register new member"
+msgstr "Registrer nytt medlem"
+
+#: clubmembers/frontend/templates/club/index.html:7
+#, python-format
+msgid "Members in %(name)s"
+msgstr "Medlemmer i %(name)s"
+
+#: clubmembers/frontend/templates/club/index.html:13
+msgid "Name"
+msgstr "Navn"
+
+#: clubmembers/frontend/templates/club/index.html:14
+#: clubmembers/frontend/templates/club/member.html:14
+#: clubmembers/members/models.py:41
+msgid "Active"
+msgstr "Aktiv"
+
+#: clubmembers/frontend/templates/club/index.html:15
+#: clubmembers/members/models.py:22
+msgid "Region"
+msgstr ""
+
+#: clubmembers/frontend/templates/club/index.html:16
+#: clubmembers/frontend/templates/club/member.html:11
+#: clubmembers/members/models.py:38
+msgid "Joined"
+msgstr "Registrert"
+
+#: clubmembers/frontend/templates/club/member.html:8
+msgid "Club region"
+msgstr "Klubbregion"
+
+#: clubmembers/frontend/templates/club/member.html:17
+msgid "Yes"
+msgstr "Ja"
+
+#: clubmembers/frontend/templates/club/member.html:19
+msgid "No"
+msgstr "Nei"
+
+#: clubmembers/frontend/templates/club/member.html:23
+#: clubmembers/members/models.py:44
+msgid "PDGA Number"
+msgstr "PDGA-Nummer"
+
+#: clubmembers/frontend/templates/club/register.html:33
+msgid "Submit"
+msgstr "Send"
+
+#: clubmembers/members/models.py:13
+msgid "Firstname"
+msgstr "Fornavn"
+
+#: clubmembers/members/models.py:16
+msgid "Lastname"
+msgstr "Etternavn"
+
+#: clubmembers/members/models.py:19
+msgid "Email"
+msgstr "Epost"
+
+#: clubmembers/members/models.py:25
+msgid "Phonenumber"
+msgstr "Telefonnummer"
+
+#: clubmembers/members/models.py:28
+msgid "Street"
+msgstr "Adresse"
+
+#: clubmembers/members/models.py:31
+msgid "Zip"
+msgstr "Postnr"
+
+#: clubmembers/members/models.py:34
+msgid "State"
+msgstr "Poststed"
+
+#: clubmembers/members/models.py:36
+msgid "Country"
+msgstr "Land"
+
+#: clubmembers/members/models.py:47
+msgid "Member"
+msgstr "Medlem"
