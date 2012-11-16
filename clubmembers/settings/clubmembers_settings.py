@@ -19,12 +19,14 @@ INSTALLED_APPS = (
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '_db.db',
+        'NAME': '/home/jone/git-repos/clubmembers/_db.db',
     }
 }
 
 TEST_RUNNER = "django_nose.NoseTestSuiteRunner"
 CLUB_ID = 1
 ROOT_URLCONF = 'clubmembers.frontend.club_urls'
+LANGUAGE_CODE = 'nb_NO'
 
 STATICFILES_DIRS = ('/home/jone/git-repos/bootstrap',)
+LOCALE_PATHS = ('/home/jone/git-repos/clubmembers/conf/locale',)
