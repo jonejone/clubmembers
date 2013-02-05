@@ -1,7 +1,8 @@
 from django.utils.translation import ugettext_lazy as _
+from django.contrib.auth.models import User
 from django.db import models
-from django_extensions.db.models import TimeStampedModel
 
+from django_extensions.db.models import TimeStampedModel
 from django_countries.fields import CountryField
 
 from clubmembers.clubs.models import Club, ClubRegion
@@ -43,13 +44,31 @@ class Member(TimeStampedModel):
     pdga_number = models.CharField(max_length=10,
         blank=True, null=True, verbose_name=_("PDGA Number"))
 
+    added_by = models.ForeignKey(User,
+        blank=True, null=True)
+
+    birthdate = models.DateField(
+        blank=True, null=True)
+
     class Meta:
         verbose_name = _('Member')
         verbose_name_plural = _('Members')
-
 
     def get_name(self):
         return '%s %s' % (self.firstname, self.lastname)
 
     def get_pdga_link(self):
         return 'http://www.pdga.com/player-stats?PDGANum=%s' % (self.pdga_number)
+
+    def __unicode__(self):
+        return '%s (ID: %i)' % (self.get_name(), self.id)
+
+
+class MemberPayment(models.Model):
+    member = models.ForeignKey(Member)
+    club = models.ForeignKey(Club)
+    added = models.DateTimeField()
+    license_year = models.PositiveSmallIntegerField()
+    amount = models.DecimalField(
+        decimal_places=2,
+        max_digits=8)
