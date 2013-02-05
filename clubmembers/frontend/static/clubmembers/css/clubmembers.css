@@ -1,0 +1,9 @@
+
+/* For the header to move down */
+@media (min-width: 980px) {
+    body {padding-top: 60px;}
+}
+
+.member-payments-table {
+    width: 450px;
+}
