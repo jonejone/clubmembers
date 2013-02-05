@@ -1,0 +1,36 @@
+{% extends "club/base.html" %}
+{% load i18n %}
+
+{% block content %}
+<h1>{% trans "My members" %}</h1>
+
+
+<table class="table table-striped span8">
+    <thead>
+        <tr>
+            <th>{% trans "Name" %}</th>
+            <th>{% trans "Active" %}</th>
+            <th>{% trans "Region" %}</th>
+            <th>{% trans "Joined" %}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for member in user.member_set.all %}
+        <tr>
+            <td>
+                <a href="{% url "club-member" member.id %}">{{ member.get_name }}</a>
+            </td>
+            <td>
+                {% if member.active %}
+                <i class="icon-ok"></i>
+                {% else %}
+                <i class="icon-remove"></i>
+                {% endif %}
+            </td>
+            <td>{{ member.club_region.name }}</td>
+            <td>{{ member.joined }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

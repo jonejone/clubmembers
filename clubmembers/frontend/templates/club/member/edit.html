@@ -1,0 +1,10 @@
+{% extends "club/base.html" %}
+{% load i18n %}
+
+{% block content %}
+<h1>{% trans "Edit member" %} {{ member.get_name }}</h1>
+
+<form class="form-horizontal" method="post" action="{% url "club-member-edit" member.id %}">{% csrf_token %}
+    {% include "bootstrap_form.html" %}
+</form>
+{% endblock %}
