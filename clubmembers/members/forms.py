@@ -1,9 +1,37 @@
 from django.forms import ModelForm
-from django.forms.models import modelformset_factory
-from clubmembers.members.models import Member
+from clubmembers.members.models import Member, MemberPayment
+from datetime import datetime
 
 
 class RegisterMemberForm(ModelForm):
     class Meta:
         model = Member
-        exclude = ('club',)
+        exclude = ('club', 'added_by')
+
+
+class MemberPaymentForm(ModelForm):
+    class Meta:
+        model = MemberPayment
+        fields = ('license_year', 'amount')
+
+    def __init__(self, *kargs, **kwargs):
+        if not 'member' in kwargs:
+            raise Exception('MemberPaymentForm requires member')
+
+        self.member = kwargs.get('member')
+        del kwargs['member']
+
+        super(MemberPaymentForm, self).__init__(
+            *kargs, **kwargs)
+
+    def save(self, *kargs, **kwargs):
+        kwargs['commit'] = False
+        payment = super(MemberPaymentForm, self).save(
+            *kargs, **kwargs)
+
+        payment.added = datetime.now()
+        payment.club = self.member.club_region.club
+        payment.member = self.member
+
+        payment.save()
+        return payment
