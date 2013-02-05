@@ -1,0 +1,10 @@
+{% extends "club/base.html" %}
+{% load i18n %}
+
+{% block content %}
+<h1>{% trans "Registration" %}</h1>
+
+<form class="form-horizontal" method="post" action="{% url "registration_register" %}" enctype="multipart/form-data">{% csrf_token %}
+    {% include "bootstrap_form.html" %}
+</form>
+{% endblock %}
