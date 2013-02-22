@@ -1,7 +1,7 @@
 import os
 
 PROJECT_ROOT = os.path.abspath(
-    os.path.join(os.path.dirname(__file__), '..'))
+    os.path.join(os.path.dirname(__file__), '../..'))
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -46,25 +46,46 @@ MIDDLEWARE_CLASSES = (
 )
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/home/jone/git-repos/clubmembers/_db.db',
-    }
-}
-
 TEST_RUNNER = "django_nose.NoseTestSuiteRunner"
 ROOT_URLCONF = 'clubmembers.frontend.club_urls'
 LANGUAGE_CODE = 'nb_NO'
 
-STATICFILES_DIRS = ('/home/jone/clubmembers/static',)
-LOCALE_PATHS = ('/home/jone/git-repos/clubmembers/conf/locale',)
+#LOCALE_PATHS = ('/home/jone/git-repos/clubmembers/conf/locale',)
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ACCOUNT_ACTIVATION_DAYS = 30
-
-
 SITES_DIR = os.path.join(PROJECT_ROOT, 'sites')
 SITES_PACKAGE = 'sites'
 DEFAULT_HOST = 'medlemmer.haugalandfrisbee.com'
+
+# Pick up SendGrid config from Heroku environment
+if os.environ.get('SENDGRID_USERNAME'):
+    EMAIL_HOST_USER = os.environ['SENDGRID_USERNAME']
+    EMAIL_HOST = 'smtp.sendgrid.net'
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True
+    EMAIL_HOST_PASSWORD = os.environ['SENDGRID_PASSWORD']
+
+# If we find AWS_ACCESS_KEY_ID, assume usage of S3
+# for both static files and media
+if os.environ.get('AWS_ACCESS_KEY_ID'):
+    AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+    AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+    AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
+    AWS_BUCKET_NAME = os.environ['AWS_BUCKET_NAME']
+    AWS_BUCKET_URL = 'https://s3.amazonaws.com/%s/' % AWS_BUCKET_NAME
+    AWS_QUERYSTRING_AUTH = False
+    STATIC_URL = '%sstatic/' % AWS_BUCKET_URL
+    MEDIA_URL = '%smedia/' % AWS_BUCKET_URL
+    STATICFILES_STORAGE = 'clubmembers.s3utils.StaticRootS3BotoStorage'
+    DEFAULT_FILE_STORAGE = 'clubmembers.s3utils.MediaRootS3BotoStorage'
+
+else:
+    # Lets use local paths instead of S3
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
+    STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles/')
+
+ADMINS = (
+    ('Jone Eide', 'jone@idev.no'),
+)
 
