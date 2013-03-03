@@ -44,19 +44,11 @@ MIDDLEWARE_CLASSES = (
     'clubmembers.clubs.middleware.ClubMiddleware',
 )
 
-
 TEST_RUNNER = "django_nose.NoseTestSuiteRunner"
 ROOT_URLCONF = 'clubmembers.frontend.urls'
 LANGUAGE_CODE = 'nb_NO'
 TIME_ZONE = 'Europe/Oslo'
-
-
-#LOCALE_PATHS = ('/home/jone/git-repos/clubmembers/conf/locale',)
-
 ACCOUNT_ACTIVATION_DAYS = 30
-SITES_DIR = os.path.join(PROJECT_ROOT, 'sites')
-SITES_PACKAGE = 'sites'
-DEFAULT_HOST = 'medlemmer.haugalandfrisbee.com'
 
 # Pick up SendGrid config from Heroku environment
 if os.environ.get('SENDGRID_USERNAME'):
