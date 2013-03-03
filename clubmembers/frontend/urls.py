@@ -4,6 +4,5 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', 'clubmembers.frontend.views.index', name='index'),
-
     url(r'^admin/', include(admin.site.urls)),
 )

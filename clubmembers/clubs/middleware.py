@@ -8,6 +8,7 @@ class ClubMiddleware:
 
         if site.clubsite_set.count():
             request.club = site.clubsite_set.all()[0].club
+            request.urlconf = 'clubmembers.clubs.urls'
 
             admin = False
             if request.user.is_authenticated():

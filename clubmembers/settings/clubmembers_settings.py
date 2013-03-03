@@ -46,8 +46,10 @@ MIDDLEWARE_CLASSES = (
 
 
 TEST_RUNNER = "django_nose.NoseTestSuiteRunner"
-ROOT_URLCONF = 'clubmembers.frontend.club_urls'
+ROOT_URLCONF = 'clubmembers.frontend.urls'
 LANGUAGE_CODE = 'nb_NO'
+TIME_ZONE = 'Europe/Oslo'
+
 
 #LOCALE_PATHS = ('/home/jone/git-repos/clubmembers/conf/locale',)
 
