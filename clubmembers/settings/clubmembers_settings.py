@@ -15,7 +15,6 @@ INSTALLED_APPS = (
     'django_nose',
     'django_countries',
     'registration',
-    'dynamicsiteslite',
 
     'clubmembers.members',
     'clubmembers.clubs',
@@ -36,12 +35,12 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 
 MIDDLEWARE_CLASSES = (
+    'djangotoolbox.sites.dynamicsite.DynamicSiteIDMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'dynamicsiteslite.middleware.DynamicSitesMiddleware',
     'clubmembers.clubs.middleware.ClubMiddleware',
 )
 
