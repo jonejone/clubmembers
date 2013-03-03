@@ -4,7 +4,7 @@ Pillow==1.7.8
 boto==2.6.0
 dj-database-url==0.2.1
 django-boto==0.1.6b
-django-extensions=1.1.0
+django-extensions==1.1.0
 django-countries==1.5
 django-crispy-forms==1.2.3
 django-nose==1.1
