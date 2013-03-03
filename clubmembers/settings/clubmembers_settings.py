@@ -44,6 +44,7 @@ MIDDLEWARE_CLASSES = (
     'clubmembers.clubs.middleware.ClubMiddleware',
 )
 
+DATABASES = {'default': dj_database_url.config()}
 TEST_RUNNER = "django_nose.NoseTestSuiteRunner"
 ROOT_URLCONF = 'clubmembers.frontend.urls'
 LANGUAGE_CODE = 'nb_NO'
