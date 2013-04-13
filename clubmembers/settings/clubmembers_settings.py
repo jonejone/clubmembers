@@ -91,3 +91,4 @@ ADMINS = (
     ('Jone Eide', 'jone@idev.no'),
 )
 
+ALLOWED_HOSTS = ('medlemmer.haugalandfrisbee.com',)
