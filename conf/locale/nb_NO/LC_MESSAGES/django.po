@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Clubmembers\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-16 13:11-0600\n"
+"POT-Creation-Date: 2013-04-13 20:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Jone Eide <jone@idev.no>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,99 +15,303 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: clubmembers/frontend/templates/bootstrap_form.html:26
+#: clubmembers/frontend/templates/club/register.html:42
+msgid "Submit"
+msgstr "Send"
+
 #: clubmembers/frontend/templates/club/base.html:6
 msgid "Club members"
 msgstr "Klubbmedlemmer"
 
-#: clubmembers/frontend/templates/club/base.html:28
-#: clubmembers/members/models.py:48
-msgid "Members"
-msgstr "Medlemmer"
-
 #: clubmembers/frontend/templates/club/base.html:29
-#: clubmembers/frontend/templates/club/register.html:5
-msgid "Register new member"
-msgstr "Registrer nytt medlem"
+msgid "Join now!"
+msgstr "Bli medlem nå!"
 
-#: clubmembers/frontend/templates/club/index.html:7
+#: clubmembers/frontend/templates/club/base.html:30
+#: clubmembers/frontend/templates/club/index.html:18
+#: clubmembers/frontend/templates/club/account/profile.html:13
+msgid "Browse members"
+msgstr "Se klubbmedlemmer"
+
+#: clubmembers/frontend/templates/club/base.html:36
+msgid "Administration"
+msgstr "Administrering"
+
+#: clubmembers/frontend/templates/club/base.html:43
+#: clubmembers/frontend/templates/club/account/members.html:5
+msgid "My members"
+msgstr "Mine medlemmer"
+
+#: clubmembers/frontend/templates/club/base.html:46
+#: clubmembers/frontend/templates/registration/logout.html:5
+msgid "Logout"
+msgstr "Logg ut"
+
+#: clubmembers/frontend/templates/club/base.html:50
+#: clubmembers/frontend/templates/registration/login.html:5
+msgid "Login"
+msgstr "Logg inn"
+
+#: clubmembers/frontend/templates/club/base.html:53
+msgid "Register"
+msgstr "Lag konto"
+
+#: clubmembers/frontend/templates/club/index.html:6
+#, python-format
+msgid ""
+"On this page you can join %(name)s. You can also browse our existing "
+"members, and manage your membership."
+msgstr ""
+"På denne siden kan du bli medlem i %(name)s. Du kan også se en oversikt over "
+"våre medlemmer, samt administrere ditt medlemskap."
+
+#: clubmembers/frontend/templates/club/index.html:11
+#: clubmembers/frontend/templates/club/register.html:5
+#, python-format
+msgid "Join %(name)s now!"
+msgstr "Bli medlem i %(name)s nå!"
+
+#: clubmembers/frontend/templates/club/index.html:17
+msgid "More information"
+msgstr "Mer informasjon"
+
+#: clubmembers/frontend/templates/club/member.html:8
+msgid "Edit this member"
+msgstr "Rediger medlem"
+
+#: clubmembers/frontend/templates/club/member.html:12
+msgid "Club region"
+msgstr "Klubbregion"
+
+#: clubmembers/frontend/templates/club/member.html:15
+#: clubmembers/frontend/templates/club/members.html:16
+#: clubmembers/frontend/templates/club/account/members.html:14
+#: clubmembers/members/models.py:41
+msgid "Joined"
+msgstr "Registrert"
+
+#: clubmembers/frontend/templates/club/member.html:18
+#: clubmembers/frontend/templates/club/members.html:14
+#: clubmembers/frontend/templates/club/account/members.html:12
+#: clubmembers/members/models.py:44
+msgid "Active"
+msgstr "Aktiv"
+
+#: clubmembers/frontend/templates/club/member.html:21
+msgid "Yes"
+msgstr "Ja"
+
+#: clubmembers/frontend/templates/club/member.html:23
+msgid "No"
+msgstr "Nei"
+
+#: clubmembers/frontend/templates/club/member.html:27
+#: clubmembers/members/models.py:47
+msgid "PDGA Number"
+msgstr "PDGA-Nummer"
+
+#: clubmembers/frontend/templates/club/member.html:41
+msgid "Added by"
+msgstr "Lagt til av"
+
+#: clubmembers/frontend/templates/club/member.html:46
+#: clubmembers/members/models.py:28
+msgid "Phonenumber"
+msgstr "Telefonnummer"
+
+#: clubmembers/frontend/templates/club/member.html:51
+#: clubmembers/members/models.py:20
+msgid "Email"
+msgstr "Epost"
+
+#: clubmembers/frontend/templates/club/member.html:58
+msgid "License payments"
+msgstr ""
+
+#: clubmembers/frontend/templates/club/member.html:63
+msgid "Year"
+msgstr "År"
+
+#: clubmembers/frontend/templates/club/member.html:64
+msgid "Amount"
+msgstr "Beløp"
+
+#: clubmembers/frontend/templates/club/member.html:81
+msgid "Add license payment"
+msgstr ""
+
+#: clubmembers/frontend/templates/club/members.html:7
 #, python-format
 msgid "Members in %(name)s"
 msgstr "Medlemmer i %(name)s"
 
-#: clubmembers/frontend/templates/club/index.html:13
+#: clubmembers/frontend/templates/club/members.html:13
+#: clubmembers/frontend/templates/club/account/members.html:11
 msgid "Name"
 msgstr "Navn"
 
-#: clubmembers/frontend/templates/club/index.html:14
-#: clubmembers/frontend/templates/club/member.html:14
-#: clubmembers/members/models.py:41
-msgid "Active"
-msgstr "Aktiv"
-
-#: clubmembers/frontend/templates/club/index.html:15
-#: clubmembers/members/models.py:22
+#: clubmembers/frontend/templates/club/members.html:15
+#: clubmembers/frontend/templates/club/account/members.html:13
+#: clubmembers/members/models.py:24
 msgid "Region"
 msgstr ""
 
-#: clubmembers/frontend/templates/club/index.html:16
-#: clubmembers/frontend/templates/club/member.html:11
-#: clubmembers/members/models.py:38
-msgid "Joined"
-msgstr "Registrert"
+#: clubmembers/frontend/templates/club/register.html:7
+msgid ""
+"If you specify an email address, you will receive a confirmation email from "
+"us immediately after you have registered. This email will also include "
+"payment information."
+msgstr ""
 
-#: clubmembers/frontend/templates/club/member.html:8
-msgid "Club region"
-msgstr "Klubbregion"
+#: clubmembers/frontend/templates/club/register.html:10
+msgid "Price for adults"
+msgstr "Pris for voksne"
 
-#: clubmembers/frontend/templates/club/member.html:17
-msgid "Yes"
-msgstr "Ja"
+#: clubmembers/frontend/templates/club/register.html:12
+msgid "Price for juniors"
+msgstr "Pris for juniorer"
 
-#: clubmembers/frontend/templates/club/member.html:19
-msgid "No"
-msgstr "Nei"
+#: clubmembers/frontend/templates/club/register.html:12
+#, python-format
+msgid "ages %(age)s and below"
+msgstr "til og med fylt %(age)s år"
 
-#: clubmembers/frontend/templates/club/member.html:23
-#: clubmembers/members/models.py:44
-msgid "PDGA Number"
-msgstr "PDGA-Nummer"
+#: clubmembers/frontend/templates/club/account/profile.html:5
+msgid "My profile"
+msgstr "Min profil"
 
-#: clubmembers/frontend/templates/club/register.html:33
-msgid "Submit"
-msgstr "Send"
+#: clubmembers/frontend/templates/club/account/profile.html:7
+msgid ""
+"Thanks for logging in to our site. If you are an administrator, you "
+"should've gained access to manage this clubs members."
+msgstr ""
 
-#: clubmembers/members/models.py:13
+#: clubmembers/frontend/templates/club/account/profile.html:12
+msgid "Register new member"
+msgstr "Registrer nytt medlem"
+
+#: clubmembers/frontend/templates/club/member/edit.html:5
+msgid "Edit member"
+msgstr "Rediger medlem"
+
+#: clubmembers/frontend/templates/club/member/edit.html:7
+msgid "Return to member details"
+msgstr "Tilbake til medlem"
+
+#: clubmembers/frontend/templates/registration/activate.html:5
+msgid "Activation failed"
+msgstr "Aktivering feilet"
+
+#: clubmembers/frontend/templates/registration/activate.html:7
+msgid ""
+"Your attempt to activate your account has failed. Are you sure you clicked "
+"the link correctly, or pasted the activation code? Please check again. You "
+"could also see this error because your account has already been activated, "
+"for example because of clicking the link twice."
+msgstr ""
+
+#: clubmembers/frontend/templates/registration/activation_complete.html:5
+msgid "Activation completed"
+msgstr "Aktivering fullført"
+
+#: clubmembers/frontend/templates/registration/activation_complete.html:7
+msgid ""
+"Your account has now been activated and is ready for you to login and start "
+"using."
+msgstr ""
+
+#: clubmembers/frontend/templates/registration/activation_email.txt:3
+#, python-format
+msgid ""
+"\n"
+"Hello,\n"
+"\n"
+"You have received this email because someone have registered with your email "
+"address on %(domain)s.\n"
+"\n"
+"Please follow this link to activate your key: http://%(domain)s%(url)s\n"
+"\n"
+"If you don't click the link above to activate your account within "
+"%(expiration_days)s days, your account will be deleted automatically. \n"
+"\n"
+"Thanks and regards,\n"
+"%(domain)s\n"
+msgstr ""
+
+#: clubmembers/frontend/templates/registration/activation_email_subject.txt:2
+#, python-format
+msgid "Activation key for account on %(domain)s"
+msgstr ""
+
+#: clubmembers/frontend/templates/registration/login.html:7
+msgid "Here you can login to your account."
+msgstr "Her kan du logge inn på din konto."
+
+#: clubmembers/frontend/templates/registration/login.html:11
+msgid "Invalid username and/or password, please try again."
+msgstr "Feil brukernavn og/eller passord, vennligst prøv igjen."
+
+#: clubmembers/frontend/templates/registration/login.html:21
+#, python-format
+msgid "Forgotten your password? <a href=\"%(url)s\">Click here to reset</a>"
+msgstr ""
+
+#: clubmembers/frontend/templates/registration/logout.html:7
+msgid "You have now been logged out from your account."
+msgstr "Du har nå blitt logget ut av din konto."
+
+#: clubmembers/frontend/templates/registration/registration_complete.html:5
+#: clubmembers/frontend/templates/registration/registration_form.html:5
+msgid "Registration"
+msgstr "Registrering"
+
+#: clubmembers/frontend/templates/registration/registration_complete.html:7
+msgid ""
+"Your account has now been created, and we have sent you an email containing "
+"your activation code. Please check this email and click the link inside."
+msgstr ""
+
+#: clubmembers/members/models.py:14
 msgid "Firstname"
 msgstr "Fornavn"
 
-#: clubmembers/members/models.py:16
+#: clubmembers/members/models.py:17
 msgid "Lastname"
 msgstr "Etternavn"
 
-#: clubmembers/members/models.py:19
-msgid "Email"
-msgstr "Epost"
+#: clubmembers/members/models.py:21
+msgid "Needed if you want information by email."
+msgstr ""
 
-#: clubmembers/members/models.py:25
-msgid "Phonenumber"
-msgstr "Telefonnummer"
+#: clubmembers/members/models.py:27
+msgid "Needed if you want information by SMS."
+msgstr ""
 
-#: clubmembers/members/models.py:28
+#: clubmembers/members/models.py:31
 msgid "Street"
 msgstr "Adresse"
 
-#: clubmembers/members/models.py:31
+#: clubmembers/members/models.py:34
 msgid "Zip"
 msgstr "Postnr"
 
-#: clubmembers/members/models.py:34
+#: clubmembers/members/models.py:37
 msgid "State"
 msgstr "Poststed"
 
-#: clubmembers/members/models.py:36
+#: clubmembers/members/models.py:39
 msgid "Country"
 msgstr "Land"
 
-#: clubmembers/members/models.py:47
+#: clubmembers/members/models.py:53
+msgid "Please use format: YYYY-MM-DD"
+msgstr ""
+
+#: clubmembers/members/models.py:57
 msgid "Member"
 msgstr "Medlem"
+
+#: clubmembers/members/models.py:58
+msgid "Members"
+msgstr "Medlemmer"
