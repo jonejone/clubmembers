@@ -4,6 +4,13 @@ import os
 PROJECT_ROOT = os.path.abspath(
     os.path.join(os.path.dirname(__file__), '../..'))
 
+
+# Allow environment variable to turn on debugging
+DEBUG = False
+if os.environ.get('CLUBMEMBERS_DEBUG'):
+    DEBUG = True
+
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
