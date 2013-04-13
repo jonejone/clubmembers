@@ -9,8 +9,10 @@ from datetime import date
 
 from clubmembers.clubs.models import Club
 from clubmembers.members.models import Member
-from clubmembers.members.forms import (RegisterMemberForm,
-                                       MemberPaymentForm,)
+from clubmembers.members.forms import (
+    RegisterMemberForm,
+    EditMemberForm,
+    MemberPaymentForm,)
 
 
 @login_required
@@ -88,7 +90,7 @@ def member_edit(request, member_id):
         raise Http404
 
     if request.method == 'POST':
-        form = RegisterMemberForm(
+        form = EditMemberForm(
             request.POST,
             instance=member,)
 
@@ -97,7 +99,7 @@ def member_edit(request, member_id):
             return HttpResponseRedirect(reverse(
                 'club-member', args=[new_member.id]))
     else:
-        form = RegisterMemberForm(instance=member)
+        form = EditMemberForm(instance=member)
 
     form.fields['club_region'].queryset = request.club.clubregion_set.all()
     form.fields['joined'].initial = date.today()

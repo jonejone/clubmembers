@@ -4,6 +4,8 @@
 {% block content %}
 <h1>{% trans "Edit member" %} {{ member.get_name }}</h1>
 
+<p><a href="{% url "club-member" member.id %}">{% trans "Return to member details" %}</a></p>
+
 <form class="form-horizontal" method="post" action="{% url "club-member-edit" member.id %}">{% csrf_token %}
     {% include "bootstrap_form.html" %}
 </form>

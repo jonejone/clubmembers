@@ -3,6 +3,12 @@ from clubmembers.members.models import Member, MemberPayment
 from datetime import datetime
 
 
+class EditMemberForm(ModelForm):
+    class Meta:
+        model = Member
+        exclude = ('club', 'added_by')
+
+
 class RegisterMemberForm(ModelForm):
     class Meta:
         model = Member
