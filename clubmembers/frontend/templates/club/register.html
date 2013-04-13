@@ -2,7 +2,16 @@
 {% load i18n %}
 
 {% block content %}
-<h1>{% trans "Register new member" %}</h1>
+<h1>{% blocktrans with name=club.name %}Join {{ name }} now!{% endblocktrans %}</h1>
+
+<p>{% trans "If you specify an email address, you will receive a confirmation email from us immediately after you have registered. This email will also include payment information." %}</p>
+
+<dl>
+    <dt>{% trans "Price for adults" %}<dt>
+    <dd>{{ club.yearly_fee }} {{ club.currency }} per year</dd>
+    <dt>{% trans "Price for juniors" %} ({% blocktrans with age=club.youth_age_limit %}ages {{ age }} and below{% endblocktrans %})<dt>
+    <dd>{{ club.yearly_fee_youth }} {{ club.currency }} per year</dd>
+</dl>
 
 <form class="form-horizontal" method="post" action="{% url "club-register" %}">{% csrf_token %}
     <fieldset>

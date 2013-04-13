@@ -6,7 +6,7 @@ from datetime import datetime
 class RegisterMemberForm(ModelForm):
     class Meta:
         model = Member
-        exclude = ('club', 'added_by')
+        exclude = ('club', 'added_by', 'active', 'joined')
 
 
 class MemberPaymentForm(ModelForm):

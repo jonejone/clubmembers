@@ -2,37 +2,20 @@
 {% load i18n %}
 
 {% block content %}
+<p class="lead">
+{% blocktrans with name=club.name %}On this page you can join {{ name }}. You can also browse our existing members, and manage your membership.{% endblocktrans %}
+</p>
 
-<h1>
-    {% blocktrans with name=club.name %}Members in {{ name }}{% endblocktrans %}
-</h1>
+<div class="row join-now-button-row">
+    <div class="btn-group span12">
+        <a class="btn btn-large btn-primary" href="{% url "club-register" %}">{% blocktrans with name=club.name %}Join {{ name }} now!{% endblocktrans %}</a>
+    </div>
+</div>
 
-<table class="table table-striped span8">
-    <thead>
-        <tr>
-            <th>{% trans "Name" %}</th>
-            <th>{% trans "Active" %}</th>
-            <th>{% trans "Region" %}</th>
-            <th>{% trans "Joined" %}</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for member in members %}
-        <tr>
-            <td>
-                <a href="{% url "club-member" member.id %}">{{ member.get_name }}</a>
-            </td>
-            <td>
-                {% if member.active %}
-                <i class="icon-ok"></i>
-                {% else %}
-                <i class="icon-remove"></i>
-                {% endif %}
-            </td>
-            <td>{{ member.club_region.name }}</td>
-            <td>{{ member.joined }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+<div class="row">
+    <div class="btn-group span12">
+        <a class="btn" href="#">{% trans "More information" %}</a>
+        <a class="btn" href="{% url "club-members" %}">{% trans "Browse members" %}</a>
+    </div>
+</div>
 {% endblock %}

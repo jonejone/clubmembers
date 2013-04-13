@@ -17,12 +17,14 @@ class Member(TimeStampedModel):
         verbose_name=_('Lastname'))
 
     email = models.EmailField(blank=True, null=True,
-        verbose_name=_('Email'))
+        verbose_name=_('Email'),
+        help_text=_('Needed if you want information by email.'))
 
     club_region = models.ForeignKey(ClubRegion,
         verbose_name=_("Region"))
 
     phonenumber = models.CharField(max_length=20,
+        help_text=_('Needed if you want information by SMS.'),
         blank=True, null=True, verbose_name=_('Phonenumber'))
 
     address_street = models.CharField(max_length=100,
@@ -48,6 +50,7 @@ class Member(TimeStampedModel):
         blank=True, null=True)
 
     birthdate = models.DateField(
+        help_text=_('Please use format: YYYY-MM-DD'),
         blank=True, null=True)
 
     class Meta:

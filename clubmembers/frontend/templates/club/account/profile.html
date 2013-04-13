@@ -1,0 +1,19 @@
+{% extends "club/base.html" %}
+{% load i18n %}
+
+{% block content %}
+<h1>{% trans "My profile" %}</h1>
+
+<p>{% trans "Thanks for logging in to our site. If you are an administrator, you should've gained access to manage this clubs members." %}</p>
+
+{% if is_club_admin %}
+<div class="row">
+    <div class="btn-group span12">
+        <a class="btn" href="{% url "club-register" %}">{% trans "Register new member" %}</a>
+        <a class="btn" href="{% url "club-members" %}">{% trans "Browse members" %}</a>
+    </div>
+</div>
+{% endif %}
+
+
+{% endblock %}

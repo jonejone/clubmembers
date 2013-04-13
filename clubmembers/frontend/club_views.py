@@ -14,6 +14,13 @@ from clubmembers.members.forms import (RegisterMemberForm,
 
 
 @login_required
+def account_profile(request):
+    return render(
+        request,
+        'club/account/profile.html')
+
+
+@login_required
 def account_members(request):
     tmpl_dict = {
         'members': request.user.member_set.all(),
@@ -25,7 +32,7 @@ def account_members(request):
         tmpl_dict)
 
 
-def index(request):
+def members(request):
     members = Member.objects.filter(
         club_region__club=request.club)
 
@@ -33,7 +40,11 @@ def index(request):
         'members': members,
     }
 
-    return render(request, 'club/index.html', data)
+    return render(request, 'club/members.html', data)
+
+
+def index(request):
+    return render(request, 'club/index.html')
 
 
 def register(request):
@@ -48,13 +59,14 @@ def register(request):
             if request.user.is_authenticated():
                 new_member.added_by = request.user
 
+            new_member.joined = date.today()
             new_member.save()
             return HttpResponseRedirect('/?saved=%i' % new_member.id)
     else:
         form = RegisterMemberForm()
 
     form.fields['club_region'].queryset = request.club.clubregion_set.all()
-    form.fields['joined'].initial = date.today()
+    form.fields['country'].initial = 'NO'
 
     data = {
         'form': form,
