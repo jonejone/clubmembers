@@ -47,6 +47,7 @@ class Member(TimeStampedModel):
         blank=True, null=True, verbose_name=_("PDGA Number"))
 
     added_by = models.ForeignKey(User,
+        verbose_name=_('Added by'),
         blank=True, null=True)
 
     birthdate = models.DateField(

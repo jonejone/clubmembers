@@ -1,11 +1,10 @@
-# Norwegian translation for ClubMembers app
-# Jone Eide <jone@idev.no> 2012
-#
+# Norwegian translation for Clubs app in Clubmembers project
+# Jone Eide <jone@idev.no> 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Clubmembers\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-13 20:29+0200\n"
+"POT-Creation-Date: 2013-04-15 13:15+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Jone Eide <jone@idev.no>\n"
 "Language-Team: Jone Eide <jone@idev.no>\n"
@@ -15,13 +14,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: clubmembers/frontend/templates/bootstrap_form.html:26
-#: clubmembers/frontend/templates/club/register.html:42
+#: clubmembers/frontend/templates/club/register.html:44
 msgid "Submit"
 msgstr "Send"
 
 #: clubmembers/frontend/templates/club/base.html:6
-msgid "Club members"
-msgstr "Klubbmedlemmer"
+msgid "Members area"
+msgstr "Medlemsområde"
 
 #: clubmembers/frontend/templates/club/base.html:29
 msgid "Join now!"
@@ -66,7 +65,7 @@ msgstr ""
 "våre medlemmer, samt administrere ditt medlemskap."
 
 #: clubmembers/frontend/templates/club/index.html:11
-#: clubmembers/frontend/templates/club/register.html:5
+#: clubmembers/frontend/templates/club/register.html:7
 #, python-format
 msgid "Join %(name)s now!"
 msgstr "Bli medlem i %(name)s nå"
@@ -84,14 +83,14 @@ msgid "Club region"
 msgstr "Klubbregion"
 
 #: clubmembers/frontend/templates/club/member.html:15
-#: clubmembers/frontend/templates/club/members.html:16
+#: clubmembers/frontend/templates/club/members.html:18
 #: clubmembers/frontend/templates/club/account/members.html:14
 #: clubmembers/members/models.py:41
 msgid "Joined"
 msgstr "Registrert"
 
 #: clubmembers/frontend/templates/club/member.html:18
-#: clubmembers/frontend/templates/club/members.html:14
+#: clubmembers/frontend/templates/club/members.html:16
 #: clubmembers/frontend/templates/club/account/members.html:12
 #: clubmembers/members/models.py:44
 msgid "Active"
@@ -111,6 +110,7 @@ msgid "PDGA Number"
 msgstr "PDGA-Nummer"
 
 #: clubmembers/frontend/templates/club/member.html:41
+#: clubmembers/members/models.py:50
 msgid "Added by"
 msgstr "Lagt til av"
 
@@ -140,23 +140,33 @@ msgstr "Beløp"
 msgid "Add license payment"
 msgstr ""
 
-#: clubmembers/frontend/templates/club/members.html:7
+#: clubmembers/frontend/templates/club/members.html:4
+#, python-format
+msgid "Members in  %(club)s"
+msgstr "Medlemmer i %(name)s"
+
+#: clubmembers/frontend/templates/club/members.html:9
 #, python-format
 msgid "Members in %(name)s"
 msgstr "Medlemmer i %(name)s"
 
-#: clubmembers/frontend/templates/club/members.html:13
+#: clubmembers/frontend/templates/club/members.html:15
 #: clubmembers/frontend/templates/club/account/members.html:11
 msgid "Name"
 msgstr "Navn"
 
-#: clubmembers/frontend/templates/club/members.html:15
+#: clubmembers/frontend/templates/club/members.html:17
 #: clubmembers/frontend/templates/club/account/members.html:13
 #: clubmembers/members/models.py:24
 msgid "Region"
 msgstr "Avdeling"
 
-#: clubmembers/frontend/templates/club/register.html:7
+#: clubmembers/frontend/templates/club/register.html:4
+#, python-format
+msgid "Join %(club)s"
+msgstr ""
+
+#: clubmembers/frontend/templates/club/register.html:9
 msgid ""
 "If you specify an email address, you will receive a confirmation email from "
 "us immediately after you have registered. This email will also include "
@@ -165,15 +175,20 @@ msgstr ""
 "Hvis du oppgir en epostadresse vil vi kunne sende deg en bekreftelse på din "
 "påmelding per epost. Denne eposten vil også inneholde betalingsinformasjon."
 
-#: clubmembers/frontend/templates/club/register.html:10
+#: clubmembers/frontend/templates/club/register.html:12
 msgid "Price for adults"
 msgstr "Pris for voksne"
 
-#: clubmembers/frontend/templates/club/register.html:12
+#: clubmembers/frontend/templates/club/register.html:13
+#: clubmembers/frontend/templates/club/register.html:15
+msgid "per year"
+msgstr ""
+
+#: clubmembers/frontend/templates/club/register.html:14
 msgid "Price for juniors"
 msgstr "Pris for juniorer"
 
-#: clubmembers/frontend/templates/club/register.html:12
+#: clubmembers/frontend/templates/club/register.html:14
 #, python-format
 msgid "ages %(age)s and below"
 msgstr "til og med fylt %(age)s år"
@@ -187,8 +202,8 @@ msgid ""
 "Thanks for logging in to our site. If you are an administrator, you "
 "should've gained access to manage this clubs members."
 msgstr ""
-"Takk for at du logget inn på vår side. Hvis du er administrator, skal "
-"du nå ha tilgang til å administrere denne klubbens medlemmer."
+"Takk for at du logget inn på vår side. Hvis du er administrator, skal du nå "
+"ha tilgang til å administrere denne klubbens medlemmer."
 
 #: clubmembers/frontend/templates/club/account/profile.html:12
 msgid "Register new member"
@@ -214,9 +229,9 @@ msgid ""
 "for example because of clicking the link twice."
 msgstr ""
 "Ditt forsøk på å aktivere kontoen har feilet. Er du sikker på at du trykket "
-"riktig på linken? Vennligst prøv en gang til. Det kan også være at du ser denne "
-"feilmeldingen fordi kontoen din allerede er aktivert, f.eks ved at du trykket på "
-"aktiveringsknappen to ganger."
+"riktig på linken? Vennligst prøv en gang til. Det kan også være at du ser "
+"denne feilmeldingen fordi kontoen din allerede er aktivert, f.eks ved at du "
+"trykket på aktiveringsknappen to ganger."
 
 #: clubmembers/frontend/templates/registration/activation_complete.html:5
 msgid "Activation completed"
@@ -226,8 +241,7 @@ msgstr "Aktivering fullført"
 msgid ""
 "Your account has now been activated and is ready for you to login and start "
 "using."
-msgstr ""
-"Din konto har nå blitt aktivert og er klar for bruk."
+msgstr "Din konto har nå blitt aktivert og er klar for bruk."
 
 #: clubmembers/frontend/templates/registration/activation_email.txt:3
 #, python-format
@@ -247,12 +261,17 @@ msgid ""
 msgstr ""
 "Hei,\n"
 "\n"
-"Du har mottatt denne mailen fordi noen har registrert seg med din epostadresse "
-"på %(domain)s.\n\n"
-"Vennligst trykk på denne linken for å aktivere din konto: http://%(domain)s%(url)s\n\n"
-"Hvis du ikke trykker på linken over i løpet av %(expiration_days)s days, your acount "
-"will be deleted automatically.\n\n"
-"Thanks and regards,\n%(domain)s\n"
+"Du har mottatt denne mailen fordi noen har registrert seg med din "
+"epostadresse på %(domain)s.\n"
+"\n"
+"Vennligst trykk på denne linken for å aktivere din konto: http://%(domain)s"
+"%(url)s\n"
+"\n"
+"Hvis du ikke trykker på linken over i løpet av %(expiration_days)s days, "
+"your acount will be deleted automatically.\n"
+"\n"
+"Thanks and regards,\n"
+"%(domain)s\n"
 
 #: clubmembers/frontend/templates/registration/activation_email_subject.txt:2
 #, python-format
@@ -286,8 +305,8 @@ msgid ""
 "Your account has now been created, and we have sent you an email containing "
 "your activation code. Please check this email and click the link inside."
 msgstr ""
-"Din konto har nå blitt opprettet, og vi har sendt deg en mail med din aktiveringslink."
-" Vennligst sjekk denne mailen og trykk på linken i den."
+"Din konto har nå blitt opprettet, og vi har sendt deg en mail med din "
+"aktiveringslink. Vennligst sjekk denne mailen og trykk på linken i den."
 
 #: clubmembers/members/models.py:14
 msgid "Firstname"
@@ -321,14 +340,18 @@ msgstr "Sted"
 msgid "Country"
 msgstr "Land"
 
-#: clubmembers/members/models.py:53
+#: clubmembers/members/models.py:54
+msgid "Birthdate"
+msgstr "Fødselsdato"
+
+#: clubmembers/members/models.py:55
 msgid "Please use format: YYYY-MM-DD"
 msgstr "Vennligst bruk format: DD.MM.YYYY"
 
-#: clubmembers/members/models.py:57
+#: clubmembers/members/models.py:59
 msgid "Member"
 msgstr "Medlem"
 
-#: clubmembers/members/models.py:58
+#: clubmembers/members/models.py:60
 msgid "Members"
 msgstr "Medlemmer"
