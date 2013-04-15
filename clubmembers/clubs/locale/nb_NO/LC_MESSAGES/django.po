@@ -1,7 +1,6 @@
 # Norwegian translation for ClubMembers app
 # Jone Eide <jone@idev.no> 2012
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Clubmembers\n"
@@ -9,7 +8,7 @@ msgstr ""
 "POT-Creation-Date: 2013-04-13 20:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Jone Eide <jone@idev.no>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: Jone Eide <jone@idev.no>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -70,7 +69,7 @@ msgstr ""
 #: clubmembers/frontend/templates/club/register.html:5
 #, python-format
 msgid "Join %(name)s now!"
-msgstr "Bli medlem i %(name)s nå!"
+msgstr "Bli medlem i %(name)s nå"
 
 #: clubmembers/frontend/templates/club/index.html:17
 msgid "More information"
@@ -155,7 +154,7 @@ msgstr "Navn"
 #: clubmembers/frontend/templates/club/account/members.html:13
 #: clubmembers/members/models.py:24
 msgid "Region"
-msgstr ""
+msgstr "Avdeling"
 
 #: clubmembers/frontend/templates/club/register.html:7
 msgid ""
@@ -163,6 +162,8 @@ msgid ""
 "us immediately after you have registered. This email will also include "
 "payment information."
 msgstr ""
+"Hvis du oppgir en epostadresse vil vi kunne sende deg en bekreftelse på din "
+"påmelding per epost. Denne eposten vil også inneholde betalingsinformasjon."
 
 #: clubmembers/frontend/templates/club/register.html:10
 msgid "Price for adults"
@@ -186,6 +187,8 @@ msgid ""
 "Thanks for logging in to our site. If you are an administrator, you "
 "should've gained access to manage this clubs members."
 msgstr ""
+"Takk for at du logget inn på vår side. Hvis du er administrator, skal "
+"du nå ha tilgang til å administrere denne klubbens medlemmer."
 
 #: clubmembers/frontend/templates/club/account/profile.html:12
 msgid "Register new member"
@@ -210,6 +213,10 @@ msgid ""
 "could also see this error because your account has already been activated, "
 "for example because of clicking the link twice."
 msgstr ""
+"Ditt forsøk på å aktivere kontoen har feilet. Er du sikker på at du trykket "
+"riktig på linken? Vennligst prøv en gang til. Det kan også være at du ser denne "
+"feilmeldingen fordi kontoen din allerede er aktivert, f.eks ved at du trykket på "
+"aktiveringsknappen to ganger."
 
 #: clubmembers/frontend/templates/registration/activation_complete.html:5
 msgid "Activation completed"
@@ -220,11 +227,11 @@ msgid ""
 "Your account has now been activated and is ready for you to login and start "
 "using."
 msgstr ""
+"Din konto har nå blitt aktivert og er klar for bruk."
 
 #: clubmembers/frontend/templates/registration/activation_email.txt:3
 #, python-format
 msgid ""
-"\n"
 "Hello,\n"
 "\n"
 "You have received this email because someone have registered with your email "
@@ -238,11 +245,19 @@ msgid ""
 "Thanks and regards,\n"
 "%(domain)s\n"
 msgstr ""
+"Hei,\n"
+"\n"
+"Du har mottatt denne mailen fordi noen har registrert seg med din epostadresse "
+"på %(domain)s.\n\n"
+"Vennligst trykk på denne linken for å aktivere din konto: http://%(domain)s%(url)s\n\n"
+"Hvis du ikke trykker på linken over i løpet av %(expiration_days)s days, your acount "
+"will be deleted automatically.\n\n"
+"Thanks and regards,\n%(domain)s\n"
 
 #: clubmembers/frontend/templates/registration/activation_email_subject.txt:2
 #, python-format
 msgid "Activation key for account on %(domain)s"
-msgstr ""
+msgstr "Aktiveringskode for konto på %(domain)s"
 
 #: clubmembers/frontend/templates/registration/login.html:7
 msgid "Here you can login to your account."
@@ -255,7 +270,7 @@ msgstr "Feil brukernavn og/eller passord, vennligst prøv igjen."
 #: clubmembers/frontend/templates/registration/login.html:21
 #, python-format
 msgid "Forgotten your password? <a href=\"%(url)s\">Click here to reset</a>"
-msgstr ""
+msgstr "<a href=\"%(url)s\">Har du glemt passordet?</a>"
 
 #: clubmembers/frontend/templates/registration/logout.html:7
 msgid "You have now been logged out from your account."
@@ -271,6 +286,8 @@ msgid ""
 "Your account has now been created, and we have sent you an email containing "
 "your activation code. Please check this email and click the link inside."
 msgstr ""
+"Din konto har nå blitt opprettet, og vi har sendt deg en mail med din aktiveringslink."
+" Vennligst sjekk denne mailen og trykk på linken i den."
 
 #: clubmembers/members/models.py:14
 msgid "Firstname"
@@ -282,11 +299,11 @@ msgstr "Etternavn"
 
 #: clubmembers/members/models.py:21
 msgid "Needed if you want information by email."
-msgstr ""
+msgstr "Nødvendig hvis du vil motta informasjon via epost."
 
 #: clubmembers/members/models.py:27
 msgid "Needed if you want information by SMS."
-msgstr ""
+msgstr "Nødvendig hvis du vil motta informasjon på SMS."
 
 #: clubmembers/members/models.py:31
 msgid "Street"
@@ -298,7 +315,7 @@ msgstr "Postnr"
 
 #: clubmembers/members/models.py:37
 msgid "State"
-msgstr "Poststed"
+msgstr "Sted"
 
 #: clubmembers/members/models.py:39
 msgid "Country"
@@ -306,7 +323,7 @@ msgstr "Land"
 
 #: clubmembers/members/models.py:53
 msgid "Please use format: YYYY-MM-DD"
-msgstr ""
+msgstr "Vennligst bruk format: DD.MM.YYYY"
 
 #: clubmembers/members/models.py:57
 msgid "Member"
