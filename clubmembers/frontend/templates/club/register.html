@@ -1,6 +1,8 @@
 {% extends "club/base.html" %}
 {% load i18n %}
 
+{% block title %}{% blocktrans with name=club.name %}Join {{ club }}{% endblocktrans %}{% endblock %}
+
 {% block content %}
 <h1>{% blocktrans with name=club.name %}Join {{ name }} now!{% endblocktrans %}</h1>
 
@@ -8,9 +10,9 @@
 
 <dl>
     <dt>{% trans "Price for adults" %}<dt>
-    <dd>{{ club.yearly_fee }} {{ club.currency }} per year</dd>
+    <dd>{{ club.yearly_fee }} {{ club.currency }} {% trans "per year" %}</dd>
     <dt>{% trans "Price for juniors" %} ({% blocktrans with age=club.youth_age_limit %}ages {{ age }} and below{% endblocktrans %})<dt>
-    <dd>{{ club.yearly_fee_youth }} {{ club.currency }} per year</dd>
+    <dd>{{ club.yearly_fee_youth }} {{ club.currency }} {% trans "per year" %}</dd>
 </dl>
 
 <form class="form-horizontal" method="post" action="{% url "club-register" %}">{% csrf_token %}

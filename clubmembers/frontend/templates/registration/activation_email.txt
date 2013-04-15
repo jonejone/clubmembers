@@ -1,7 +1,6 @@
 {% load i18n %}
 {% url "registration_activate" activation_key as url %}
-{% blocktrans with domain=site.domain url=url %}
-Hello,
+{% blocktrans with domain=site.domain url=url %}Hello,
 
 You have received this email because someone have registered with your email address on {{ domain }}.
 

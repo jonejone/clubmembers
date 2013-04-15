@@ -50,6 +50,7 @@ class Member(TimeStampedModel):
         blank=True, null=True)
 
     birthdate = models.DateField(
+        verbose_name=_('Birthdate'),
         help_text=_('Please use format: YYYY-MM-DD'),
         blank=True, null=True)
 
