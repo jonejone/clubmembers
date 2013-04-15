@@ -143,7 +143,7 @@ msgstr ""
 #: clubmembers/frontend/templates/club/members.html:4
 #, python-format
 msgid "Members in  %(club)s"
-msgstr "Medlemmer i %(name)s"
+msgstr "Medlemmer i %(club)s"
 
 #: clubmembers/frontend/templates/club/members.html:9
 #, python-format
