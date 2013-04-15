@@ -11,6 +11,10 @@ if os.environ.get('CLUBMEMBERS_DEBUG'):
     DEBUG = True
 
 
+LOCALE_PATHS = (
+    '%s/locale' % PROJECT_ROOT,
+)
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
